@@ -11,7 +11,18 @@
   "homepage": "https://www.lahjty.com/en/mcp",
   "repository": "https://github.com/shadi-almilhem/lahjty-plugin",
   "license": "MIT",
-  "keywords": ["ads", "marketing", "social-media", "arabic", "dialects", "ecommerce", "small-business", "instagram", "voiceover", "mcp"],
+  "keywords": [
+    "ads",
+    "marketing",
+    "social-media",
+    "arabic",
+    "dialects",
+    "ecommerce",
+    "small-business",
+    "instagram",
+    "voiceover",
+    "mcp"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -42,6 +53,67 @@
         "brandColorDark": "#38BBAA",
         "composerIcon": "./assets/icon.png",
         "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Plan product ads from a store page",
+              "prompt": "Use Lahjty to plan Instagram ads for the product on https://www.lahjty.com/en/mcp/demo-store. Show me what you found and ask me only what is still missing; do not create anything yet.",
+              "tools_triggered": "lahjty_extract_website_context",
+              "expected_behavior": "Reads the page once and reports the product (Cardamom Coffee Beans 250 g, 45 SAR), its product photo and brand color without inventing facts, then asks the open questions (offer, platform, language and dialect, photo, logo) together in one message with suggested defaults. No paid tool runs."
+            },
+            {
+              "description": "Create an ad image and caption from the store",
+              "prompt": "Use Lahjty to make one square English Instagram ad and a matching caption for the product on https://www.lahjty.com/en/mcp/demo-store. Use the photo from the page, no logo, and tell me the credit cost before creating.",
+              "tools_triggered": "lahjty_extract_website_context, lahjty_get_capabilities, lahjty_upload_ad_reference, lahjty_generate_marketing_image, lahjty_generate_marketing_copy",
+              "expected_behavior": "States the total credit cost first, imports the page's product photo as the reference, creates and shows a saved ad image with the real coffee bag, and writes a caption that uses only facts published on the page (price, roast, weight, shipping)."
+            },
+            {
+              "description": "Edit the ad that was just created",
+              "prompt": "Make the background plain white and keep everything else the same.",
+              "tools_triggered": "lahjty_edit_image",
+              "expected_behavior": "Calls the edit tool with the previous image's request_id, states the edit cost, and shows a new saved version with only the background changed; it does not generate an unrelated new concept."
+            },
+            {
+              "description": "Browse product-photo formats without generating",
+              "prompt": "Use Lahjty to show me 3 product-photo ad formats for a perfume bottle. Just browse, do not create anything.",
+              "tools_triggered": "lahjty_search_ad_library",
+              "expected_behavior": "Shows three product-photo formats with preview images and exact IDs, explains that they are built around the user's own product photo, makes no performance claims and runs no paid tool."
+            },
+            {
+              "description": "Saudi Arabic voiceover from an approved script",
+              "prompt": "Use Lahjty to turn this exact script into an energetic Saudi Arabic reel voiceover, and tell me the cost first: قهوة بالهيل من بيت القهوة، 250 غرام بـ45 ريال، اطلبها الحين",
+              "tools_triggered": "lahjty_get_capabilities, lahjty_generate_speech",
+              "expected_behavior": "States the cost, then creates saved Saudi Arabic speech that reads the script exactly with reel delivery, and shows a playable audio result without adding new claims."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Calendar management is out of scope",
+              "prompt": "Move my dentist appointment to Friday afternoon."
+            },
+            {
+              "description": "Posting to social accounts is out of scope",
+              "prompt": "Post this finished photo to my Instagram account right now with the caption I already wrote."
+            },
+            {
+              "description": "Buying advertising is out of scope",
+              "prompt": "Publish this ad to my Meta Ads account and spend $500 on it."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell or upsell anything in ChatGPT and processes no payments. Generation uses credits that already belong to the signed-in Lahjty account."
+      },
+      "publication": {
+        "release_notes": "Social media ads for small businesses that sell physical products: read a store or product page, ask the missing details, create ad images from the real product photo, Arabic-dialect or English captions and voiceovers, edit saved ads, and browse curated product-photo formats.",
+        "translations": {
+          "ar-SA": {
+            "subtitle": "إعلانات منتجاتك بالعربي",
+            "description": "لهجتي تساعد المتاجر الصغيرة التي تبيع منتجات حقيقية على صنع إعلانات السوشال ميديا بالعربية بلهجاتها وبالإنجليزية. شارك رابط متجرك أو صفحة المنتج، فتقرأ لهجتي المنتجات والأسعار وصور المنتج وألوان العلامة، وتسألك فقط عن الناقص (المنتج، العرض، المنصة، اللهجة، الصورة، الشعار)، وتوضح تكلفة الرصيد قبل أي خطوة مدفوعة، ثم تصنع صور إعلانات من صورة منتجك الحقيقية ونصوصاً وتعليقات صوتية، وتعدّل الإعلان بطلب بسيط مثل «خل الخلفية بيضاء». لهجتي تصنع المحتوى فقط ولا تنشر في حساباتك."
+          }
+        }
       }
     }
   }

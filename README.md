@@ -70,6 +70,13 @@ Open **Customize > Connectors**, select **+ Add**, then **Add custom connector**
 
 The setup guide has one-click install links for Cursor and VS Code, plus configs for other MCP apps: https://www.lahjty.com/en/mcp#connect
 
+## Troubleshooting
+
+- **New tools or the image view not showing after a Lahjty update:** refresh the tool list. ChatGPT: plugin settings, **Refresh tools**. Claude: Customize > Connectors > Lahjty > menu > **Refresh tools list**.
+- **Claude asks before every Lahjty step:** on the Lahjty connector page set **Read-only tools** to **Always allow**. They are free and never create anything; paid steps still ask.
+- **ChatGPT asks which account to use:** more than one Lahjty sign-in is connected to the plugin. Pick one, or remove the extra under the plugin's connected accounts.
+- **Claude Code says claude.ai connectors are disabled:** an `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN` or similar override is set in your environment or Claude Code settings. The plugin itself still works; remove the override to load your claude.ai connectors too.
+
 ## Accounts and credits
 
 - Any Lahjty account can connect with browser sign-in, including free accounts.
