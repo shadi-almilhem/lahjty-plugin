@@ -1,0 +1,17 @@
+{
+  "name": "lahjty",
+  "owner": {
+    "name": "Lahjty",
+    "email": "contact@lahjty.com"
+  },
+  "description": "Lahjty for Claude Code: social media ads for small businesses that sell physical products, in Arabic and English.",
+  "plugins": [
+    {
+      "name": "lahjty",
+      "source": "./plugins/lahjty",
+      "description": "Turn a store link into ready-to-post social media ads: product ad images, captions and voiceovers in Arabic and English, with dialect-aware copy and follow-up edits.",
+      "category": "marketing",
+      "tags": ["ads", "marketing", "social-media", "arabic", "ecommerce", "small-business", "mcp"]
+    }
+  ]
+}

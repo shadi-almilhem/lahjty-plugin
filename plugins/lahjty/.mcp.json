@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lahjty": {
+      "type": "http",
+      "url": "https://www.lahjty.com/mcp"
+    }
+  }
+}

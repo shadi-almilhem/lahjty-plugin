@@ -1,0 +1,20 @@
+{
+  "name": "lahjty",
+  "interface": {
+    "displayName": "Lahjty"
+  },
+  "plugins": [
+    {
+      "name": "lahjty",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lahjty"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

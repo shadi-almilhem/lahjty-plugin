@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lahjty",
+  "version": "1.0.0",
+  "description": "Turn a store link into ready-to-post social media ads for physical products: ad images, captions and voiceovers in Arabic and English, with dialect-aware copy and follow-up edits.",
+  "author": {
+    "name": "Lahjty",
+    "email": "contact@lahjty.com",
+    "url": "https://www.lahjty.com"
+  },
+  "homepage": "https://www.lahjty.com/en/mcp",
+  "repository": "https://github.com/shadi-almilhem/lahjty-plugin",
+  "license": "MIT",
+  "keywords": ["ads", "marketing", "social-media", "arabic", "dialects", "ecommerce", "small-business", "instagram", "voiceover", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Lahjty",
+        "shortDescription": "Arabic & English product ads",
+        "longDescription": "Lahjty helps small businesses that sell physical products create social media ads in Arabic and English. Share your store website or product page and Lahjty reads it, asks a few questions (which product, the offer or price, the platform, the language or Arabic dialect, your product photo and logo), states the credit cost, then creates ad images, captions and optional voiceovers. Ask for follow-up edits such as a white background, a story-size version or a different dialect. You can also start from a layout in the Lahjty Ad Library. Lahjty supports Saudi, Gulf, Emirati, Egyptian, Levantine, Iraqi and Modern Standard Arabic copy. Reading a website, browsing the Ad Library and checking your balance are free; generation uses credits from your Lahjty account, and each paid step states its cost first. Lahjty creates drafts only: it never posts or publishes to your social accounts. It reads only websites you share.",
+        "developerName": "Lahjty",
+        "category": "Creativity",
+        "capabilities": [
+          "Read a store website you share",
+          "Create ad images from your product photo and logo",
+          "Edit an ad image you already made",
+          "Write Arabic and English captions and ad copy",
+          "Convert copy between Arabic dialects",
+          "Create Arabic and English voiceovers",
+          "Find and remake layouts from the Lahjty Ad Library"
+        ],
+        "websiteURL": "https://www.lahjty.com",
+        "supportURL": "https://www.lahjty.com/en/contact",
+        "privacyPolicyURL": "https://www.lahjty.com/en/privacy-policy",
+        "termsOfServiceURL": "https://www.lahjty.com/en/terms-of-service",
+        "defaultPrompt": [
+          "Make Instagram ads for my online store",
+          "Create a Snapchat ad in Saudi Arabic from my product photo",
+          "Write 3 captions for my product in Egyptian Arabic"
+        ],
+        "brandColor": "#0F766E",
+        "brandColorDark": "#38BBAA",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

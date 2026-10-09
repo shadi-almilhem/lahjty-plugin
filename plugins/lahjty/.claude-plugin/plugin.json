@@ -1,0 +1,20 @@
+{
+  "name": "lahjty",
+  "displayName": "Lahjty",
+  "description": "Turn a store link into ready-to-post social media ads for physical products: ad images, captions and voiceovers in Arabic and English, with dialect-aware copy and follow-up edits. Connects to the hosted Lahjty MCP server; sign in with /mcp.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lahjty",
+    "email": "contact@lahjty.com",
+    "url": "https://www.lahjty.com"
+  },
+  "homepage": "https://www.lahjty.com/en/mcp",
+  "repository": "https://github.com/shadi-almilhem/lahjty-plugin",
+  "license": "MIT",
+  "keywords": ["ads", "marketing", "social-media", "arabic", "dialects", "ecommerce", "small-business", "instagram", "voiceover", "mcp"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://www.lahjty.com/en/mcp",
+  "supportUrl": "https://www.lahjty.com/en/contact",
+  "privacyPolicyUrl": "https://www.lahjty.com/en/privacy-policy",
+  "termsOfServiceUrl": "https://www.lahjty.com/en/terms-of-service"
+}
